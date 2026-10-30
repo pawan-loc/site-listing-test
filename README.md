@@ -4,7 +4,7 @@ A pretend realtor website for testing the Footfallz **Site Listing Chatbot**. It
 
 Live: https://pawan-loc.github.io/site-listing-test/
 
-Pages show only an address and MLS number. Prices, photos and details come live from the chatbot, through Footfallz.
+Pages show a snapshot of 12 active Irvine CRMLS listings (read from Footfallz mls-farm on 30 Oct 2026) with the listing credit and CRMLS notice. They will go out of date as homes sell; refresh before team testing.
 
 ## Set up (once, after the feature is live in production)
 
@@ -19,7 +19,7 @@ Pages show only an address and MLS number. Prices, photos and details come live 
 3. Ask about the home (price, HOA, year built) → correct answers.
 4. Click "View all" → click a card → this site's page opens.
 5. Open a listing page directly (e.g. from the list) → the chat knows the home.
-6. Click "Section 1 / Section 2" → the page moves, nothing reloads.
+6. Click a photo at the top → the page moves to it, nothing reloads.
 7. "I'd like to talk to the agent" → names the realtor with phone and email.
 8. Keep asking until phone verification appears → verify → "You're all set! Keep chatting with me here." and the chat continues.
 9. In Footfallz → Chatbot Sessions, the chat shows a "Site listing chatbot" label.
