@@ -21,4 +21,21 @@
   s.async = true;
   s.setAttribute("data-embed-key", key);
   document.body.appendChild(s);
+
+  // While the chat panel is open, make room for it on the right so it never
+  // covers the page (style.css adds the padding on wide screens only).
+  var watched = null, styleObs = null;
+  function sync() {
+    var frame = document.getElementById("gcb-frame");
+    if (frame !== watched) {
+      if (styleObs) styleObs.disconnect();
+      watched = frame;
+      if (frame) {
+        styleObs = new MutationObserver(sync);
+        styleObs.observe(frame, { attributes: true, attributeFilter: ["style"] });
+      }
+    }
+    document.body.classList.toggle("chat-open", !!frame && frame.style.display === "block");
+  }
+  new MutationObserver(sync).observe(document.body, { childList: true, subtree: true });
 })();
